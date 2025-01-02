@@ -16,7 +16,7 @@ const Navbar = () => {
 			submenus: [],
 		},
 		{
-			title: "Research Projects",
+			title: "Publications",
 			link: "/#research-project",
 			submenus: [],
 		},
@@ -46,10 +46,10 @@ const Navbar = () => {
 						alt=""
 						className="h-full object-cover opacity-75"
 					/> */}
-					<p className="lg:text-3xl text-base text-primary-1000 font-Open-sans font-semibold leading-tight">
+					<p className="lg:text-3xl text-base text-primary-1000 font-Open-sans font-semibold leading-tight mt-3">
 						Smart Energy Learning Centre
 					</p>
-					<p className="text-[9px] lg:text-xs text-primary-500 font-light font-Open-sans ">A New Research Centre at DA-IICT funded by BSES Delhi, India</p>
+					{/* <p className="text-[9px] lg:text-xs text-primary-500 font-light font-Open-sans ">A New Research Centre at DA-IICT funded by BSES Delhi, India</p> */}
 				</Link>
 				<div className="lg:flex hidden items-center justify-between h-full px-5 bg-white">
 					<div className="h-full">

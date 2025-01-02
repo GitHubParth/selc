@@ -1,8 +1,168 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+// import required modules
+import { Autoplay } from 'swiper/modules';
 
 const ProjectDetails = () => {
 	const { project } = useParams();
+
+	const teamMembers = [
+		{
+			name: "John Doe",
+			age: 30,
+			gender: "Male",
+			designation: "Senior Leadership",
+			email: "johndoe@example.com",
+			degree: "Phd in Artificial Intelligence, Phd in Machine Learning, Masters in Data Science",
+			image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+		},
+		{
+			name: "John Doe",
+			age: 30,
+			gender: "Female",
+			designation: "Principal Investigator",
+			email: "johndoe@example.com",
+			degree: "Phd in Artificial Intelligence, Phd in Machine Learning, Masters in Data Science",
+			image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D",
+		},
+		{
+			name: "John Doe",
+			age: 30,
+			gender: "Female",
+			designation: "Principal Investigator",
+			email: "johndoe@example.com",
+			degree: "Phd in Artificial Intelligence, Phd in Machine Learning, Masters in Data Science",
+			image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D",
+		},
+		{
+			name: "John Doe",
+			age: 30,
+			gender: "Female",
+			designation: "Principal Investigator",
+			email: "johndoe@example.com",
+			degree: "Phd in Artificial Intelligence, Phd in Machine Learning, Masters in Data Science",
+			image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D",
+		},
+		{
+			name: "John Doe",
+			age: 30,
+			gender: "Male",
+			designation: "Co-Principal Investigator",
+			email: "Co-Principal Investigator",
+			degree: "Phd in Artificial Intelligence, Phd in Machine Learning, Masters in Data Science",
+			image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+		},
+		{
+			name: "John Doe",
+			age: 30,
+			gender: "Female",
+			designation: "Co-Principal Investigator",
+			email: "johndoe@example.com",
+			degree: "Phd in Artificial Intelligence, Phd in Machine Learning, Masters in Data Science",
+			image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D",
+		},
+		{
+			name: "John Doe",
+			age: 30,
+			gender: "Male",
+			designation: "Co-Principal Investigator",
+			email: "Co-Principal Investigator",
+			degree: "Phd in Artificial Intelligence, Phd in Machine Learning, Masters in Data Science",
+			image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+		},
+		{
+			name: "John Doe",
+			age: 30,
+			gender: "Female",
+			designation: "Co-Principal Investigator",
+			email: "johndoe@example.com",
+			degree: "Phd in Artificial Intelligence, Phd in Machine Learning, Masters in Data Science",
+			image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D",
+		},
+		{
+			name: "John Doe",
+			age: 30,
+			gender: "Male",
+			designation: "Co-Principal Investigator",
+			email: "Co-Principal Investigator",
+			degree: "Phd in Artificial Intelligence, Phd in Machine Learning, Masters in Data Science",
+			image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+		},
+		{
+			name: "John Doe",
+			age: 30,
+			gender: "Male",
+			designation: "Research Fellows",
+			email: "johndoe@example.com",
+			degree: "Phd in Artificial Intelligence, Phd in Machine Learning, Masters in Data Science",
+			image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+		},
+		{
+			name: "John Doe",
+			age: 30,
+			gender: "Female",
+			designation: "Senior Leadership",
+			email: "johndoe@example.com",
+			degree: "Phd in Artificial Intelligence, Phd in Machine Learning, Masters in Data Science",
+			image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D",
+		},
+		{
+			name: "John Doe",
+			age: 30,
+			gender: "Male",
+			designation: "Senior Leadership",
+			email: "johndoe@example.com",
+			degree: "Phd in Artificial Intelligence, Phd in Machine Learning, Masters in Data Science",
+			image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+		},
+		{
+			name: "John Doe",
+			age: 30,
+			gender: "Female",
+			designation: "Senior Leadership",
+			email: "johndoe@example.com",
+			degree: "Phd in Artificial Intelligence, Phd in Machine Learning, Masters in Data Science",
+			image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D",
+		},
+		{
+			name: "John Doe",
+			age: 30,
+			gender: "Male",
+			designation: "Senior Leadership",
+			email: "johndoe@example.com",
+			degree: "Phd in Artificial Intelligence, Phd in Machine Learning, Masters in Data Science",
+			image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+		},
+		{
+			name: "John Doe",
+			age: 30,
+			gender: "Male",
+			designation: "Research Interns",
+			email: "johndoe@example.com",
+			degree: "Phd in Artificial Intelligence, Phd in Machine Learning, Masters in Data Science",
+			image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+		},
+		{
+			name: "John Doe",
+			age: 30,
+			gender: "Female",
+			designation: "Research Interns",
+			email: "johndoe@example.com",
+			degree: "Phd in Artificial Intelligence, Phd in Machine Learning, Masters in Data Science",
+			image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D",
+		},
+		{
+			name: "John Doe",
+			age: 30,
+			gender: "Male",
+			designation: "Research Interns",
+			email: "johndoe@example.com",
+			degree: "Phd in Artificial Intelligence, Phd in Machine Learning, Masters in Data Science",
+			image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
+		},
+	];
 
 	return (
 		<div className="w-full min-h-screen bg-[#F1f1F1] py-20 px-4 lg:px-0">
@@ -103,6 +263,54 @@ const ProjectDetails = () => {
 							solutions. It continues to be supported by the EC
 							and multiple connected projects and initiatives.
 						</p>
+					</div>
+					<div className="flex flex-col lg:gap-7 gap-5">
+						<div className="flex flex-col gap-4">
+							<p className="text-3xl font-semibold font-Open-sans">TEAM</p>
+							<div className="md:w-[8%] w-[30%] h-[4px] bg-primary-500" />
+						</div>
+						<Swiper
+							spaceBetween={30}
+							breakpoints={{
+								576: {
+									slidesPerView: 1,
+								},
+								768: {
+									slidesPerView: 2,
+								},
+								1024: {
+									slidesPerView: 4,
+								},
+							}}
+							autoplay={{
+								delay: 2500,
+								disableOnInteraction: false,
+							}}
+							modules={[Autoplay]}
+							loop={true}
+							className="mySwiper w-full px-8 select-none"
+						>
+							{teamMembers.map((member, index) => (
+								<SwiperSlide key={index} className="w-full flex flex-col gap-3 group">
+									<div className="w-full flex relative group rounded-xl overflow-hidden" key={index}>
+										<div className="w-full h-1 bg-primary-500 absolute bottom-0 left-0 z-10" />
+										<img
+											src={member.image}
+											alt={member.name}
+											className="w-96 h-80 object-cover"
+										/>
+										<div className="w-full text-white absolute bottom-0 transition-all duration-300 flex flex-col items-start justify-start gap-1 py-3 pb-4 px-4 bg-[rgba(0,0,0,0.8)]">
+											<h1 className="text-xl font-bold text-white">{member.name}</h1>
+											<p>{member.designation}</p>
+											{/* <p>{member.degree}</p> */}
+										</div>
+									</div>
+								</SwiperSlide>
+							))}
+							{/* <SwiperSlide className="w-full flex flex-col gap-3 group">
+								<img src="/images/daiict-logo.jpg" alt="" className="w-full h-full object-cover rounded-full" />
+							</SwiperSlide> */}
+						</Swiper>
 					</div>
 				</div>
 			</div>

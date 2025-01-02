@@ -13,6 +13,7 @@ import AboutUs from "./Pages/AboutUs";
 import Engagement from "./Pages/Engagement";
 import WorkWithUs from "./Pages/WorkWithUs"
 import ContactUs from "./Pages/ContactUs";
+import ThemeProjects from "./Pages/ThemeProjects";
 
 const App = () => {
 	return (
@@ -22,6 +23,7 @@ const App = () => {
 				<Route path="/" element={<HomePage />} />
 				<Route path="/about" element={<AboutUs />} />
 				{/* <Route path="/contact-us" element={<ContactUs />} /> */}
+				<Route path="/research/:theme" element={<ThemeProjects />} />
 				<Route path="/people" element={<People />} />
 				<Route path="/people/:role" element={<People />} />
 				<Route path="/project/:project" element={<ProjectDetails />} />

@@ -1,6 +1,6 @@
 import React from "react";
 
-const GridCards = ({ title, data, cols, bgColor, id }) => {
+const GridCards = ({ title, data, cols, bgColor, id, redirect }) => {
 	const style = {
 		backgroundColor: bgColor,
 	};
@@ -48,13 +48,13 @@ const GridCards = ({ title, data, cols, bgColor, id }) => {
 							</div>
 						</div>
 					))} */}
-					{data.map((item, index) => (
+					{data && data.length > 0 ? data.map((item, index) => (
 						<div
 							key={index}
 							className="w-full h-full lg:min-h-[550px] lg:max-h-[550px] group"
 							onClick={() => {
-								if (title === "Research Projects") {
-									window.location.href = "/project/project-scheme-" + (index + 1);
+								if (redirect) {
+									window.location.href = redirect + item.link;
 								}
 							}}
 						>
@@ -67,13 +67,16 @@ const GridCards = ({ title, data, cols, bgColor, id }) => {
 							</div>
 							<div className="flex flex-col justify-evenly">
 								<div className="flex flex-col gap-0.5 lg:mt-5 mt-3">
-									<p className="lg:text-2xl text-xl font-semibold group-hover:text-primary-500 truncate transition-all duration-300">{item.name}</p>
+									<p className="lg:text-2xl text-xl font-semibold group-hover:text-primary-500 line-clamp-2 transition-all duration-300">{item.name}</p>
 									<div className="w-0 group-hover:w-[15%] h-[2px] bg-primary-500 transition-all duration-300"></div>
 								</div>
-								<p className="line-clamp-4 lg:mt-4 mt-3 text-xs lg:text-base">{item.desc}</p>
+								{item.desc && <p className="line-clamp-4 lg:mt-4 mt-3 text-xs lg:text-base">{item.desc.includes("PI") ? <>{item.desc.split(":")[0] + " : "} <span className="font-semibold">{item.desc.split(":")[1]}</span></> : item.desc}</p>}
 							</div>
 						</div>
-					))}
+					)) : <div className="w-full h-screen relative">
+							<h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary-500 text-center text-6xl font-bold font-Open-sans leading-[70px] lg:leading-normal lg:whitespace-nowrap capitalize">No Projects</h1>
+						</div>
+					}
 				</div>
 			</div>
 		</div>
