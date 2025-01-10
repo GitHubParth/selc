@@ -239,7 +239,8 @@ const People = () => {
 						))}
 					</div>
 				</div>
-				<h1 className="text-4xl leading-tight sm:leading-normal sm:text-5xl font-bold mt-7 mb-10 md:mb-14 relative before:w-2/3 before:absolute before:h-1 before:bg-primary-500 before:-bottom-3 before:left-1">Our Team</h1>
+				<h1 className="text-4xl leading-tight sm:leading-normal sm:text-5xl font-bold mt-7 mb-10 md:mb-14 relative">Our Team</h1>
+				{/* <h1 className="text-4xl leading-tight sm:leading-normal sm:text-5xl font-bold mt-7 mb-10 md:mb-14 relative before:w-2/3 before:absolute before:h-1 before:bg-primary-500 before:-bottom-3 before:left-1">Our Team</h1> */}
 				<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
 					{peoples.map((people, index) => (
 						<div className="w-full flex relative group rounded-xl overflow-hidden" key={index}>

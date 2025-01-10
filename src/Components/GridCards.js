@@ -7,7 +7,7 @@ const GridCards = ({ title, data, cols, bgColor, id, redirect }) => {
 	return (
 		<div
 			id={id ? id : ""}
-			className={"w-full min-h-screen lg:py-24 py-20"}
+			className={"w-full min-h-screen lg:py-28 py-20"}
 			style={style}
 		>
 			<div className="lg:max-w-6xl w-full px-4 lg:px-0 mx-auto flex flex-col gap-8">
@@ -58,7 +58,7 @@ const GridCards = ({ title, data, cols, bgColor, id, redirect }) => {
 								}
 							}}
 						>
-							<div className="w-full h-96 overflow-hidden">
+							<div className="w-full h-96 overflow-hidden rounded-xl">
 								<img
 									src={item.image}
 									alt=""

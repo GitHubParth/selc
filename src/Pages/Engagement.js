@@ -140,7 +140,7 @@ const Engagement = () => {
 							{newsData.map((item, index) => (
 								<SwiperSlide className="w-full flex flex-col gap-3 group" key={index}>
 									<div key={index} className="w-full group">
-										<div className="w-full h-[70%] overflow-hidden">
+										<div className="w-full h-[70%] overflow-hidden rounded-xl">
 											<img
 												src={item.image}
 												alt=""
@@ -283,7 +283,7 @@ const Engagement = () => {
 						>
 							{mediaImages.map((item, index) => (
 								<SwiperSlide className="w-full flex flex-col gap-3 group" key={index}>
-									<img src={item} alt="" className="w-full h-96 object-cover" />
+									<img src={item} alt="" className="w-full h-96 object-cover rounded-xl" />
 								</SwiperSlide>
 							))}
 						</Swiper>

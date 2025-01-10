@@ -162,14 +162,22 @@ const ProjectDetails = () => {
 			degree: "Phd in Artificial Intelligence, Phd in Machine Learning, Masters in Data Science",
 			image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
 		},
+		{
+			tiile:'',
+			outcome:'',
+			impact:'',
+			geral:'',
+			people:'',
+		
+		},
 	];
 
 	return (
 		<div className="w-full min-h-screen bg-[#F1f1F1] py-20 px-4 lg:px-0">
 			<div className="max-w-6xl h-full mx-auto py-20">
 				<div className="flex flex-col lg:gap-4 gap-2">
-					<p className="lg:text-5xl text-3xl font-semibold font-Open-sans capitalize">{project.replaceAll("-", " ")}</p>
-					<div className="lg:w-[12%] w-[30%] h-[4px] bg-primary-500" />
+					<p className="lg:text-5xl text-3xl lg:leading-[4rem] font-semibold font-Open-sans capitalize ">{project.replaceAll("-", " ")}</p>
+					{/* <div className="lg:w-[12%] w-[30%] h-[4px] bg-primary-500" /> */}
 				</div>
 				<div className="flex flex-col gap-7">
 					<div className="lg:mt-14 mt-8 w-full h-[400px] max-h-[400px] rounded-xl overflow-hidden">
@@ -181,7 +189,7 @@ const ProjectDetails = () => {
 					</div>
 					<div className="flex flex-col lg:gap-7 gap-5">
 						<div className="flex flex-col gap-4">
-							<p className="text-3xl font-semibold font-Open-sans">Background</p>
+							<p className="text-3xl font-semibold font-Open-sans uppercase">Background</p>
 							<div className="md:w-[10%] w-[30%] h-[4px] bg-primary-500" />
 						</div>
 						<p className="text-justify lg:text-left">
@@ -216,7 +224,7 @@ const ProjectDetails = () => {
 					</div>
 					<div className="flex flex-col lg:gap-7 gap-5">
 						<div className="flex flex-col gap-4">
-							<p className="text-3xl font-semibold font-Open-sans">OUTCOME</p>
+							<p className="text-3xl font-semibold font-Open-sans uppercase">OUTCOME</p>
 							<div className="md:w-[10%] w-[30%] h-[4px] bg-primary-500" />
 						</div>
 						<p className="text-justify lg:text-left">
@@ -252,7 +260,7 @@ const ProjectDetails = () => {
 					</div>
 					<div className="flex flex-col lg:gap-7 gap-5">
 						<div className="flex flex-col gap-4">
-							<p className="text-3xl font-semibold font-Open-sans">IMPACT</p>
+							<p className="text-3xl font-semibold font-Open-sans uppercase">IMPACT</p>
 							<div className="md:w-[8%] w-[30%] h-[4px] bg-primary-500" />
 						</div>
 						<p className="text-justify lg:text-left">
@@ -266,8 +274,8 @@ const ProjectDetails = () => {
 					</div>
 					<div className="flex flex-col lg:gap-7 gap-5">
 						<div className="flex flex-col gap-4">
-							<p className="text-3xl font-semibold font-Open-sans">TEAM</p>
-							<div className="md:w-[8%] w-[30%] h-[4px] bg-primary-500" />
+							<p className="text-3xl font-semibold font-Open-sans uppercase">TEAM</p>
+							<div className="md:w-[5%] w-[30%] h-[4px] bg-primary-500" />
 						</div>
 						<Swiper
 							spaceBetween={30}

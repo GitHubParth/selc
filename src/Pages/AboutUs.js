@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 // import required modules
 import { Autoplay } from 'swiper/modules';
 
 const AboutUs = () => {
+	useEffect(() => {
+		const href = window.location.href.substring(
+			window.location.href.lastIndexOf("#") + 1
+		);
+		const element = document.getElementById(href);
+		if (element) {
+			element.scrollIntoView({ behavior: "smooth" });
+		}
+	}, []);
 	return (
 		<div className="w-full font-Open-sans mt-20">
 			{/* <div className="w-full h-screen bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(0,0,0,1)),url('https://www.sydney.edu.au/content/dam/corporate/images/lambert-initiative/about/quad-emtpy.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg')] bg-cover bg-no-repeat bg-center text-white flex flex-col justify-end border-b-4 border-primary-500">
@@ -24,11 +33,11 @@ const AboutUs = () => {
 					<p className="md:text-lg mb-5 text-justify lg:text-left">At Insight SFI Research Centre for Data Analytics, we undertake high impact research in data analytics that has significant benefits for the individual, industry and society by enabling better decision making. All of our research is informed by our vision; Empowering Citizens. Smarter Societies.</p>
 					<p className="md:text-lg text-justify lg:text-left">Making good decisions is dependent on having the best and most accurate information at your fingertips. Our research helps to transform data into knowledge.</p>
 				</div>
-				<div className="w-full pt-20">
+				<div id="vision-mission" className="w-full pt-24">
 					<h2 className="text-4xl leading-tight sm:leading-normal sm:text-5xl font-bold mb-6 md:mb-10 relative lg:before:w-[12%] before:w-[30%] before:absolute before:h-1 before:bg-primary-500 before:-bottom-1 before:left-0">Vision & Mission</h2>
 				</div>
-				<div className="w-full py-6 flex items-start  gap-10">
-					<div className="w-[30%] min-h-[600px] h-[600px] max-h-[600px] overflow-hidden">
+				<div className="w-full py-6 flex items-start gap-10">
+					<div className="w-[30%] min-h-[600px] h-[600px] max-h-[600px] overflow-hidden rounded-xl">
 						<div className="relative w-full overflow-hidden h-[40%]">
 							<img src="https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=1080" alt="" className="w-full h-full object-cover" />
 							<div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
@@ -225,7 +234,7 @@ const AboutUs = () => {
 							<p className="md:text-lg text-justify lg:text-center">To revolutionize the global energy landscape and pave the way for a smart, energy-efficient, and carbon-neutral future.</p>
 						</div>
 					</div>
-					<div className="w-[30%] min-h-[600px] h-[600px] max-h-[600px] overflow-hidden">
+					<div className="w-[30%] min-h-[600px] h-[600px] max-h-[600px] overflow-hidden rounded-xl">
 						<div className="relative w-full overflow-hidden h-[40%]">
 							<img src="https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1080" alt="" className="w-full h-full object-cover" />
 							<div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
@@ -264,7 +273,7 @@ const AboutUs = () => {
 						</div>
 					</div>
 				</div>
-				<div id="who-are-we" className="w-full py-20">
+				<div id="who-are-we" className="w-full py-24">
 					<h2 className="text-4xl leading-tight sm:leading-normal sm:text-5xl font-bold mb-6 md:mb-10 relative lg:before:w-[12%] before:w-[30%] before:absolute before:h-1 before:bg-primary-500 before:-bottom-1 before:left-0">Who Are We</h2>
 					<p className="md:text-lg mb-5 text-justify lg:text-left">SELC is one of the largest data analytics centres in Europe. It seeks to derive value from Big Data and provides innovative technology solutions for industry and society by enabling better decision-making.</p>
 					<p className="md:text-lg mb-5 text-justify lg:text-left">We support 450 researchers across areas such as the Fundamentals of Data Science, Sensing and Actuation, Scaling Algorithms, Model Building, Multi Modal Analysis, Data Engineering and Governance, Decision Making and Trustworthy AI.</p>
@@ -276,7 +285,7 @@ const AboutUs = () => {
 						<li className="text-base mt-2">Sustainability</li>
 					</ul>
 				</div>
-				<div id="governance" className="w-full py-20">
+				<div id="governance" className="w-full py-24">
 					<h2 className="text-4xl leading-tight sm:leading-normal sm:text-5xl font-bold mb-10 relative lg:before:w-[12%] before:w-[30%] before:absolute before:h-1 before:bg-primary-500 before:-bottom-1 before:left-0">Governance</h2>
 					<Swiper
 						spaceBetween={30}
