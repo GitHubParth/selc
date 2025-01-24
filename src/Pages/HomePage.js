@@ -163,6 +163,20 @@ const HomePage = () => {
 
 	const newsData = [
 		{
+			image: "https://www.sydney.edu.au/content/dam/corporate/images/faculty-of-arts-and-social-sciences/research/research-centres/sssharc/new-law-school-building.jpg/jcr:content/renditions/cq5dam.web.800.533.2x.jpeg",
+			name: "ARC invests in research partnerships with industry",
+			desc: "The Australian Research Council has awarded $5.15m to industry projects at the University, along with funding for an Industrial Transformation Training Centre to prepare leaders of Australia's future quantum computing industry.",
+		},{
+			image: "https://images.pexels.com/photos/22741670/pexels-photo-22741670/free-photo-of-clock-with-digits-on-wall.jpeg?auto=compress&cs=tinysrgb&w=1080&lazy=load",
+			name: "ARC invests in research partnerships with industry",
+			desc: "The Australian Research Council has awarded $5.15m to industry projects at the University, along with funding for an Industrial Transformation Training Centre to prepare leaders of Australia's future quantum computing industry.",
+		},
+		{
+			image: "https://images.pexels.com/photos/22741670/pexels-photo-22741670/free-photo-of-clock-with-digits-on-wall.jpeg?auto=compress&cs=tinysrgb&w=1080&lazy=load",
+			name: "ARC invests in research partnerships with industry",
+			desc: "The Australian Research Council has awarded $5.15m to industry projects at the University, along with funding for an Industrial Transformation Training Centre to prepare leaders of Australia's future quantum computing industry.",
+		},
+		{
 			image: "https://www.sydney.edu.au/content/dam/people/sam-banister-(right)-josh-ismin-(left)-psylo-high-res.jpg/jcr:content/renditions/cq5dam.web.800.533.2x.jpeg",
 			name: "New psychedelic treatments for mental health",
 			desc: "University of Sydney researchers have partnered with Psylo, a global biotechnology startup, to develop innovative treatments for psychiatric and neurological disorders.",
@@ -189,6 +203,28 @@ const HomePage = () => {
 	return (
 		<div className="w-full font-Open-sans">
 			<div className="w-full mt-20 h-[75vh] flex items-center justify-center border-b-4 border-primary-500">
+				<div 
+					style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1)),url(https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=1080)" }} 
+					className={"w-full h-full relative !flex bg-cover bg-no-repeat bg-center"}
+				>
+					<div className="py-20 lg:max-w-6xl mx-auto px-4 lg:px-0 flex flex-col justify-end lg:gap-8 gap-4 text-white">
+							<p className="lg:text-6xl text-2xl font-Nunito">Our Mission</p>
+							<div className="h-[5px] w-[14%] bg-primary-500"></div>
+							<p className="lg:text-2xl font-normal lg:leading-10 lg:w-[90%] w-full">
+								To drive transformative solutions in sustainable energy by fostering interdisciplinary collaboration, advancing cutting-edge research, and building strong partnerships that empower stakeholders toward a smarter, energy-efficient, and carbon-neutral world.
+							</p>
+						<div>
+							<button 
+								className="bg-primary-500 text-white py-2 px-4 rounded-full hover:bg-primary-600 transition-all duration-300"
+								onClick={() => {window.location.href = "/about#vision-mission"}}
+							>
+								Learn More
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			{/* <div className="w-full mt-20 h-[75vh] flex items-center justify-center border-b-4 border-primary-500">
 				<Swiper
 					onBeforeInit={(swiper) => {
 						heroSwiperRef.current = swiper;
@@ -235,18 +271,69 @@ const HomePage = () => {
 						</SwiperSlide>
 					))}
 				</Swiper>
-			</div>
+			</div> */}
 			{/* <GridCards
 				cols="3"
 				title="About Us"
 				data={aboutUsData}
 				bgColor="#F1F1F1"
 			/> */}
-			<div className="w-full flex items-center justify-center py-16 bg-[#F1F1F1]">
+			<div className="w-full flex items-center justify-center md:py-32 py-28 bg-[#F1F1F1]">
 				<div className="w-full max-w-6xl px-4 lg:px-0 flex flex-col gap-8">
 					<div className="flex items-center justify-between">
 						<div className="flex flex-col gap-4">
 							<p className="lg:text-5xl text-3xl font-semibold font-Open-sans">News</p>
+							<div className="w-[50%] h-[4px] bg-primary-500" />
+						</div>
+					</div>
+					<div className="w-full grid lg:grid-cols-3 grid-cols-1 gap-4">
+						{newsData.map((item, index) => {
+							if (index === 0) {
+								return(
+									<div key={index} className="col-span-2">
+										<div className="w-full h-full max-h-[500px] overflow-hidden group">
+											<div className="w-full h-[80%] rounded-xl overflow-hidden">
+												<img
+													src={item.image}
+													alt=""
+													className="w-full h-full object-cover transition-all duration-300 transform group-hover:scale-105"
+												/>
+											</div>
+											<div className="p-4 px-2">
+												<p className="text-2xl font-semibold group-hover:text-primary-500 transition-all duartion-300">{item.name}</p>
+												<p className="text-sm mt-2 line-clamp-2">
+													{item.desc}
+												</p>
+											</div>
+										</div>
+									</div>
+								)
+							}
+						})}
+						<div className="col-span-1 max-h-[500px] overflow-y-scroll no-scrollbar">
+							<div className="w-full h-full flex flex-col gap-4">
+								{newsData.map((item, index) => {
+									if (index > 0) {
+										return(
+											<div key={index} className="w-full border-b border-primary-500 pb-4 px-2 group">
+												<p className="text-xl font-semibold group-hover:text-primary-500 transition-all duartion-300">{item.name}</p>
+												<p className="text-sm mt-2 line-clamp-2">
+													{item.desc}
+												</p>
+											</div>
+										)
+									}
+								})}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="research" className="w-full flex items-center justify-center md:py-32 py-28 bg-white">
+				<div className="w-full max-w-6xl px-4 lg:px-0 flex flex-col gap-8">
+					<div className="flex items-center justify-between">
+						<div className="flex flex-col gap-4">
+							<p className="lg:text-5xl text-3xl font-semibold font-Open-sans">Research Themes</p>
 							<div className="w-[50%] h-[4px] bg-primary-500" />
 						</div>
 						<div className="flex items-center gap-5 lg:hidden">
@@ -308,15 +395,19 @@ const HomePage = () => {
 							loop={true}
 							className="mySwiper w-full px-8"
 						>
-							{themesData.map((item, index) => (
-								<SwiperSlide className="w-full flex flex-col gap-3 group" key={index}>
+							{heroSwiperData.map((item, index) => (
+								<SwiperSlide 
+									className="w-full flex flex-col gap-3 group" 
+									key={index}
+									onClick={() => {window.location.href = "/research/" + item.title.toLowerCase().split(" ").join("-")}}
+								>
 									<img
 										src={item.image}
 										alt=""
 										className="w-full lg:h-80 h-64 object-cover rounded-xl"
 									/>
 									<div className="flex flex-col gap-1 lg:mt-5 mt-3">
-										<p className="lg:text-2xl text-xl font-semibold group-hover:text-primary-500 truncate transition-all duration-300">{item.name}</p>
+										<p className="lg:text-2xl text-xl font-semibold group-hover:text-primary-500 truncate transition-all duration-300">{item.title}</p>
 										<div className="w-0 group-hover:w-[15%] h-[2px] bg-primary-500 transition-all duration-300"></div>
 									</div>
 									<p className="line-clamp-2 lg:mt-4 mt-3 text-xs lg:text-base">{item.desc}</p>
@@ -362,32 +453,26 @@ const HomePage = () => {
 					</div>
 				</div>
 			</div>
-			{/* <GridCards
-				cols="2"
-				title="Recent news"
-				data={newsData}
-				bgColor="#FFF"
-			/> */}
-			<div className="w-full flex items-center justify-center gap-10 py-16">
+			<div className="w-full flex items-center justify-center gap-10 md:py-32 py-28 bg-[#F1F1F1]">
 				<div className="w-full max-w-6xl flex flex-col gap-8 px-4 lg:px-0">
 					<div className="flex flex-col gap-4">
 						<p className="text-5xl font-semibold font-Open-sans capitalize">Resources</p>
 						<div className="w-[9%] h-[4px] bg-primary-500" />
 					</div>
 					<div className="w-full grid lg:grid-cols-4 grid-cols-2 gap-4">
-						<div className="w-full h-full aspect-square rounded-xl md:px-7 px-3 border flex flex-col md:gap-5 gap-2 items-start justify-center group hover:border-primary-500 hover:shadow-[0_0_60px_0_rgba(0,0,0,.07)] transition-all duration-300">
+						<div className="w-full h-full bg-white aspect-square rounded-xl md:px-7 px-3 border border-primary-500 flex flex-col md:gap-5 gap-2 items-start justify-center group hover:border-primary-500 hover:shadow-[0_0_60px_0_rgba(0,0,0,.07)] transition-all duration-300">
 							<p className="md:text-4xl text-2xl font-bold group-hover:text-primary-500 transition-all duration-300">1492</p>
 							<p className="md:text-base text-sm">Laboratories in 100+ states</p>
 						</div>
-						<div className="w-full h-full aspect-square rounded-xl md:px-7 px-3 border flex flex-col md:gap-5 gap-2 items-start justify-center group hover:border-primary-500 hover:shadow-[0_0_60px_0_rgba(0,0,0,.07)] transition-all duration-300">
+						<div className="w-full h-full bg-white aspect-square rounded-xl md:px-7 px-3 border border-primary-500 flex flex-col md:gap-5 gap-2 items-start justify-center group hover:border-primary-500 hover:shadow-[0_0_60px_0_rgba(0,0,0,.07)] transition-all duration-300">
 							<p className="md:text-4xl text-2xl font-bold group-hover:text-primary-500 transition-all duration-300">52</p>
 							<p className="md:text-base text-sm">Laboratories in 100+ states</p>
 						</div>
-						<div className="w-full h-full aspect-square rounded-xl md:px-7 px-3 border flex flex-col md:gap-5 gap-2 items-start justify-center group hover:border-primary-500 hover:shadow-[0_0_60px_0_rgba(0,0,0,.07)] transition-all duration-300">
+						<div className="w-full h-full bg-white aspect-square rounded-xl md:px-7 px-3 border border-primary-500 flex flex-col md:gap-5 gap-2 items-start justify-center group hover:border-primary-500 hover:shadow-[0_0_60px_0_rgba(0,0,0,.07)] transition-all duration-300">
 							<p className="md:text-4xl text-2xl font-bold group-hover:text-primary-500 transition-all duration-300">1256</p>
 							<p className="md:text-base text-sm">Laboratories in 100+ states</p>
 						</div>
-						<div className="w-full h-full aspect-square rounded-xl md:px-7 px-3 border flex flex-col md:gap-5 gap-2 items-start justify-center group hover:border-primary-500 hover:shadow-[0_0_60px_0_rgba(0,0,0,.07)] transition-all duration-300">
+						<div className="w-full h-full bg-white aspect-square rounded-xl md:px-7 px-3 border border-primary-500 flex flex-col md:gap-5 gap-2 items-start justify-center group hover:border-primary-500 hover:shadow-[0_0_60px_0_rgba(0,0,0,.07)] transition-all duration-300">
 							<p className="md:text-4xl text-2xl font-bold group-hover:text-primary-500 transition-all duration-300">560</p>
 							<p className="md:text-base text-sm">Laboratories in 100+ states</p>
 						</div>
@@ -401,7 +486,7 @@ const HomePage = () => {
 				data={ourImpactData}
 				bgColor="#F1F1F1"
 			/> */}
-			<div className="w-full bg-[#F1F1F1]">
+			<div className="w-full bg-white">
 				<div className="max-w-6xl h-full mx-auto py-10">
 					<div id="events" className="flex flex-col gap-10 py-24 px-4 lg:px-0">
 						<div className="flex items-center justify-between">
@@ -462,11 +547,11 @@ const HomePage = () => {
 										slidesPerView: 3,
 									},
 								}}
-								autoplay={{
-									delay: 2100,
-									disableOnInteraction: false,
-									pauseOnMouseEnter: true,
-								}}
+								// autoplay={{
+								// 	delay: 2100,
+								// 	disableOnInteraction: false,
+								// 	pauseOnMouseEnter: true,
+								// }}
 								onBeforeInit={(swiper) => {
 									swiperRef2.current = swiper;
 								}}
@@ -530,129 +615,6 @@ const HomePage = () => {
 							</button>
 							<button
 								onClick={() => swiperRef2.current?.slideNext()}
-								className="swiper-button-next hidden absolute top-1/2 -translate-y-1/2 -right-20 w-8 h-8 lg:w-12 lg:h-12 rounded-full lg:flex items-center justify-center bg-primary-500/5 hover:bg-primary-500/50"
-							>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width={20}
-									height={20}
-									fill="currentColor"
-									className="bi bi-chevron-right"
-									viewBox="0 0 16 16"
-								>
-									<path
-										fillRule="evenodd"
-										d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
-									/>
-								</svg>
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div className="w-full">
-				<div className="max-w-6xl h-full mx-auto py-10">
-					<div id="media" className="flex flex-col gap-10 py-24 px-4 lg:px-0">
-						<div className="flex items-center justify-between">
-							<div className="flex flex-col lg:gap-4 gap-2">
-								<p className="lg:text-5xl text-3xl font-semibold font-Open-sans">Media</p>
-								<div className="w-[70%] h-[4px] bg-primary-500" />
-							</div>
-							<div className="flex items-center gap-5 lg:hidden">
-								<button
-									onClick={() => swiperRef3.current?.slidePrev()}
-									className="swiper-button-prev w-8 h-8 lg:w-12 lg:h-12 rounded-full flex items-center justify-center bg-primary-500/5 hover:bg-primary-500/50"
-								>
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										width={20}
-										height={20}
-										fill="currentColor"
-										className="bi bi-chevron-left"
-										viewBox="0 0 16 16"
-									>
-										<path
-											fillRule="evenodd"
-											d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
-										/>
-									</svg>
-								</button>
-								<button
-									onClick={() => swiperRef3.current?.slideNext()}
-									className="swiper-button-next w-8 h-8 lg:w-12 lg:h-12 rounded-full flex items-center justify-center bg-primary-500/5 hover:bg-primary-500/50"
-								>
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										width={20}
-										height={20}
-										fill="currentColor"
-										className="bi bi-chevron-right"
-										viewBox="0 0 16 16"
-									>
-										<path
-											fillRule="evenodd"
-											d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
-										/>
-									</svg>
-								</button>
-							</div>
-						</div>
-						<div className="relative">
-							{/* <div className="flex items-center gap-5 media-slider whitespace-nowrap">
-								{mediaImages.map((item, index) => (
-									<img key={index} src={item} alt="" className="w-full h-96 object-cover rounded-xl" />
-								))}
-							</div> */}
-							<Swiper
-								spaceBetween={30}
-								breakpoints={{
-									576: {
-										slidesPerView: 1,
-									},
-									768: {
-										slidesPerView: 2,
-									},
-									1024: {
-										slidesPerView: 3,
-									},
-								}}
-								autoplay={{
-									delay: 2000,
-									disableOnInteraction: false,
-								}}
-								onBeforeInit={(swiper) => {
-									swiperRef3.current = swiper;
-								}}
-								loop={true}
-								modules={[Autoplay]}
-								className="mySwiper w-full px-8"
-							>
-								{mediaImages.map((item, index) => (
-									<SwiperSlide className="w-full flex flex-col gap-3 group" key={index}>
-										<img src={item} alt="" className="w-full h-96 object-cover rounded-xl" />
-									</SwiperSlide>
-								))}
-							</Swiper>
-							<button
-								onClick={() => swiperRef3.current?.slidePrev()}
-								className="swiper-button-prev hidden absolute top-1/2 -translate-y-1/2 -left-20 w-8 h-8 lg:w-12 lg:h-12 rounded-full lg:flex items-center justify-center bg-primary-500/5 hover:bg-primary-500/50"
-							>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width={20}
-									height={20}
-									fill="currentColor"
-									className="bi bi-chevron-left"
-									viewBox="0 0 16 16"
-								>
-									<path
-										fillRule="evenodd"
-										d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
-									/>
-								</svg>
-							</button>
-							<button
-								onClick={() => swiperRef3.current?.slideNext()}
 								className="swiper-button-next hidden absolute top-1/2 -translate-y-1/2 -right-20 w-8 h-8 lg:w-12 lg:h-12 rounded-full lg:flex items-center justify-center bg-primary-500/5 hover:bg-primary-500/50"
 							>
 								<svg

@@ -54,7 +54,7 @@ const GridCards = ({ title, data, cols, bgColor, id, redirect }) => {
 							className="w-full h-full lg:min-h-[550px] lg:max-h-[550px] group"
 							onClick={() => {
 								if (redirect) {
-									window.location.href = redirect + item.link;
+									window.location.href = redirect + item.name.toLowerCase().replace(/ /g, "-");
 								}
 							}}
 						>

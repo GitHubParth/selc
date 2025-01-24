@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 // Components
 import GridCards from '../Components/GridCards'
 
+import { projectData } from "../Variables/projectData"
+
 const ThemeProjects = () => {
 	const { theme } = useParams()
 
@@ -139,6 +141,61 @@ const ThemeProjects = () => {
 	return (
 		<>
 			<section className='pt-20'>
+				<div
+					className="w-full min-h-screen lg:py-28 py-20"
+					style={{ backgroundColor: "rgb(241, 241, 241)" }}
+					>
+					<div className="lg:max-w-6xl w-full px-4 lg:px-0 mx-auto flex flex-col gap-8">
+						<div className="flex flex-col gap-4">
+							<p className="lg:text-5xl text-3xl font-semibold font-Open-sans capitalize">
+								{theme.replace(/-/g, " ")}
+							</p>
+							<div className="w-[12%] h-[4px] bg-primary-500" />
+						</div>
+						<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
+							{projectData.filter((project) => theme === project.theme?.toLowerCase().replace(/ /g, "-")).map((project,index) => (
+								<div 
+									key={index} 
+									className="w-full h-full lg:min-h-[550px] lg:max-h-[550px] group"
+									onClick={() => {
+										window.location.href = "/project/" + project.title.toLowerCase().replace(/ /g, "-")
+									}}
+								>
+									<div className="w-full h-96 overflow-hidden rounded-xl">
+										<img
+											src={project.image}
+											alt=""
+											className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
+											onError={(e) => {
+												e.target.src = "https://dummyimage.com/450x450/FFFFFF/000000&text=No%20Image%20Found"; // Replace with your default image path
+											}}
+										/>
+									</div>
+									<div className="flex flex-col justify-evenly">
+										<div className="flex flex-col gap-0.5 lg:mt-5 mt-3">
+											<p className="lg:text-2xl text-xl font-semibold group-hover:text-primary-500 line-clamp-2 transition-all duration-300">
+												{project.title}
+											</p>
+										<div className="w-0 group-hover:w-[15%] h-[2px] bg-primary-500 transition-all duration-300" />
+									</div>
+									{project.teamImages && project.teamImages.length > 0 && 
+										(
+											<p className="line-clamp-4 lg:mt-4 mt-3 text-xs lg:text-base">
+												PI : 
+												{project.teamImages?.filter((teamMember) => teamMember["designation"] === "Principal Investigator").map((teamMember, teamIndex) => (
+													<span key={teamIndex} className="font-semibold"> {teamMember.name}{teamIndex < project.teamImages.filter((teamMember) => teamMember["designation"] === "Principal Investigator").length - 1 ? ', ' : ''}</span>
+												))}
+											</p>
+										)
+									}
+									</div>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+			</section>
+			{/* <section className='pt-20'>
 				{projectsData.map(data => data.theme).includes(theme) ? 
 					<GridCards
 						id="research-project"
@@ -152,7 +209,7 @@ const ThemeProjects = () => {
 						<h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary-500 text-center text-6xl font-bold font-Open-sans leading-[70px] lg:leading-normal lg:whitespace-nowrap capitalize">No Projects</h1>
 					</div>
 				}
-			</section>
+			</section> */}
 			<section>
 				<GridCards
 					id="research-project"

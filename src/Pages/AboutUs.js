@@ -30,14 +30,14 @@ const AboutUs = () => {
 			<div className="w-full max-w-6xl mx-auto py-14 px-4 lg:px-0">
 				<div className="w-full">
 					<h2 className="text-4xl leading-tight sm:leading-normal sm:text-5xl font-bold mb-6 md:mb-10 relative lg:before:w-[12%] before:w-[30%] before:absolute before:h-1 before:bg-primary-500 before:-bottom-1 before:left-0">About Us</h2>
-					<p className="md:text-lg mb-5 text-justify lg:text-left">At Insight SFI Research Centre for Data Analytics, we undertake high impact research in data analytics that has significant benefits for the individual, industry and society by enabling better decision making. All of our research is informed by our vision; Empowering Citizens. Smarter Societies.</p>
-					<p className="md:text-lg text-justify lg:text-left">Making good decisions is dependent on having the best and most accurate information at your fingertips. Our research helps to transform data into knowledge.</p>
+					<p className="md:text-lg mb-5 text-justify lg:text-left">SELC embodies the ethos of DAU by addressing critical global challenges, such as reducing carbon emissions, enhancing energy efficiency, and driving innovation in green technologies. Through its multidisciplinary approach, SELC empowers students, researchers, and faculty to collaborate on groundbreaking projects that integrate IoT, AI, and advanced analytics with energy systems.</p>
+					<p className="md:text-lg text-justify lg:text-left">From optimizing battery utilization in renewable setups to real-time infrastructure monitoring in industrial environments, SELC’s projects exemplify how research can directly contribute to societal progress. These initiatives not only align with global sustainability goals but also position DAU as a leader in climate action and energy innovation.</p>
 				</div>
-				<div id="vision-mission" className="w-full pt-24">
+				<div id="vision-mission" className="w-full pt-28">
 					<h2 className="text-4xl leading-tight sm:leading-normal sm:text-5xl font-bold mb-6 md:mb-10 relative lg:before:w-[12%] before:w-[30%] before:absolute before:h-1 before:bg-primary-500 before:-bottom-1 before:left-0">Vision & Mission</h2>
 				</div>
-				<div className="w-full py-6 flex items-start gap-10">
-					<div className="w-[30%] min-h-[600px] h-[600px] max-h-[600px] overflow-hidden rounded-xl">
+				<div className="w-full py-6 flex flex-col md:flex-row items-start gap-10">
+					<div className="w-full md:w-[30%] min-h-[600px] h-[600px] max-h-[600px] overflow-hidden rounded-xl">
 						<div className="relative w-full overflow-hidden h-[40%]">
 							<img src="https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=1080" alt="" className="w-full h-full object-cover" />
 							<div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
@@ -234,7 +234,7 @@ const AboutUs = () => {
 							<p className="md:text-lg text-justify lg:text-center">To revolutionize the global energy landscape and pave the way for a smart, energy-efficient, and carbon-neutral future.</p>
 						</div>
 					</div>
-					<div className="w-[30%] min-h-[600px] h-[600px] max-h-[600px] overflow-hidden rounded-xl">
+					<div className="w-full md:w-[30%] min-h-[600px] h-[600px] max-h-[600px] overflow-hidden rounded-xl">
 						<div className="relative w-full overflow-hidden h-[40%]">
 							<img src="https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=1080" alt="" className="w-full h-full object-cover" />
 							<div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
@@ -273,7 +273,7 @@ const AboutUs = () => {
 						</div>
 					</div>
 				</div>
-				<div id="who-are-we" className="w-full py-24">
+				{/* <div id="who-are-we" className="w-full py-28">
 					<h2 className="text-4xl leading-tight sm:leading-normal sm:text-5xl font-bold mb-6 md:mb-10 relative lg:before:w-[12%] before:w-[30%] before:absolute before:h-1 before:bg-primary-500 before:-bottom-1 before:left-0">Who Are We</h2>
 					<p className="md:text-lg mb-5 text-justify lg:text-left">SELC is one of the largest data analytics centres in Europe. It seeks to derive value from Big Data and provides innovative technology solutions for industry and society by enabling better decision-making.</p>
 					<p className="md:text-lg mb-5 text-justify lg:text-left">We support 450 researchers across areas such as the Fundamentals of Data Science, Sensing and Actuation, Scaling Algorithms, Model Building, Multi Modal Analysis, Data Engineering and Governance, Decision Making and Trustworthy AI.</p>
@@ -284,9 +284,9 @@ const AboutUs = () => {
 						<li className="text-base my-2">Smart Communities</li>
 						<li className="text-base mt-2">Sustainability</li>
 					</ul>
-				</div>
-				<div id="governance" className="w-full py-24">
-					<h2 className="text-4xl leading-tight sm:leading-normal sm:text-5xl font-bold mb-10 relative lg:before:w-[12%] before:w-[30%] before:absolute before:h-1 before:bg-primary-500 before:-bottom-1 before:left-0">Governance</h2>
+				</div> */}
+				<div id="advisoryBoard" className="w-full py-28">
+					<h2 className="text-4xl leading-tight sm:leading-normal sm:text-5xl font-bold mb-10 relative lg:before:w-[12%] before:w-[30%] before:absolute before:h-1 before:bg-primary-500 before:-bottom-1 before:left-0">Advisory Board</h2>
 					<Swiper
 						spaceBetween={30}
 						breakpoints={{
